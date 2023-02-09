@@ -1,0 +1,46 @@
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+    all: unset;
+    display: revert;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    transition: 0.1s;
+}
+
+:root {
+    font-size: 62.5%;
+    font-family: 'Arial', sans-serif;
+}
+
+a {
+    cursor: pointer;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 3px;
+    background-color: lime;
+}
+
+.strobe {
+    background-color: #fff;
+    height: 100vh;
+}
+
+.strobe:hover {
+    animation: strobe 1s ease-in alternate infinite;
+}
+
+@keyframes strobe {
+    from {
+        background: #fff;
+    }
+
+    to {
+        background: yellow;
+    }
+}
